@@ -1,5 +1,5 @@
 # se-training-20191108 (Updated)
-This part is Kubernetes basics in APJ Calm &amp; Karbon 101 training
+This part is Kubernetes basics hands-on in APJ Calm &amp; Karbon 101 training
 
 ## How to use
 ### Log-on kubectl client VM 

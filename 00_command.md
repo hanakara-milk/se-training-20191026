@@ -73,14 +73,14 @@ kubectl config set-context $(kubectl config current-context) --namespace=[YOUR_N
     
 ## 9: Getting your pods detail information.
 ```shell
-kubectl describe pod `[YOUR_POD_NAME]`
+kubectl describe pod [YOUR_POD_NAME]
 ```  
    
    
       
 # 10: Deploy sample service into your namespaces.
 ```shell
-kubectl apply -f ./02_service-nodeport-nginx.yaml`
+kubectl apply -f ./02_service-nodeport-nginx.yaml
 ```  
    
    

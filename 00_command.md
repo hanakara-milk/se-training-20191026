@@ -78,7 +78,7 @@ kubectl describe pod [YOUR_POD_NAME]
    
    
       
-# 10: Deploy sample service into your namespaces.
+## 10: Deploy sample service into your namespaces.
 ```shell
 kubectl apply -f ./02_service-nodeport-nginx.yaml
 ```  
@@ -87,7 +87,7 @@ kubectl apply -f ./02_service-nodeport-nginx.yaml
     
 ## 11: Gettign a little detail your nodes, services.
 ```shell
-`kubectl get nodes,svc -o wide
+kubectl get nodes,svc -o wide
 ```  
   
   

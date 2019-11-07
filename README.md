@@ -1,4 +1,4 @@
-# se-training-20191108 (Updated)
+# se-training materials (20191108 Updated)
 This part is Kubernetes basics hands-on in APJ Calm &amp; Karbon 101 training
 
 ## How to use

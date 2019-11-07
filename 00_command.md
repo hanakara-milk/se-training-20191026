@@ -1,4 +1,4 @@
-# SE Team training 001
+# SE Team training 001 kubectl基礎編
 ---
 ## 0: Getting SE Team training cluster kubeconfig
 ```shell
@@ -85,7 +85,7 @@ kubectl apply -f ./02_service-nodeport-nginx.yaml
    
    
     
-## 11: Gettign a little detail your nodes, services.
+## 11: Getting a little detail your nodes, services.
 ```shell
 kubectl get nodes,svc -o wide
 ```  

@@ -4,9 +4,8 @@ This part is Kubernetes basics hands-on in APJ Calm &amp; Karbon 101 training
 ## How to use
 ### Log-on kubectl client VM 
 ```
-ssh into KUBE-CLIENT99 VM on POC#11
+Login or ssh into your hands-on client
 ```
-> * Replace 99 with your training application number.
 
 ### Clone training materials from github
 ```

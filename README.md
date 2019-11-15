@@ -9,12 +9,12 @@ Login or ssh into your hands-on client
 
 ### Clone training materials from github
 ```
-git clone https://github.com/hanakara-milk/se-training-20191026
+git clone https://github.com/hanakara-milk/se-training-20191126-28
 ```
 
 ### Move to training materials directory
 ```
-cd se-training-20191026
+cd se-training-20191126-28
 ```
 
 Have a fun with Kubernetes!

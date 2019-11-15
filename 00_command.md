@@ -2,12 +2,9 @@
 ---
 ## 0: Getting SE Team training cluster kubeconfig
 ```shell
-Connect POC#11 Karbon UI and download kubeconfig from "kubernetes-training" cluster.
+Connect Karbon UI and download kubeconfig from "kubernetes-training" cluster.
 ```  
-    
-[POC11-Karbon]: https://10.149.11.42:7050
-[Karbon UIを見る][POC11-Karbon]
-`https://10.149.11.42:7050`  
+Karbon Console URL infomation will be provided by the instructor.
   
   
   

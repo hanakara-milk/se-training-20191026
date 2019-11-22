@@ -46,49 +46,42 @@ kubectl create ns [YOUR_NAMESPACE_NAME]
     
 ## 6: Deploy sample pods into your namespaces.
 ```shell
+kubectl run nginx --image=nginx:1.11 --port=80 -n [YOUR_NAMESPACE_NAME]
+
+or
+
 kubectl apply -f 01_deployment-nginx.yaml -n [YOUR_NAMESPACE_NAME]
 ```
-> * insert uniq your namespace name insted `[YOUR_NAMESPACE_NAME]`
    
-   
-    
 ## 7: Getting your pods information
 ```shell
 kubectl get pods -n [YOUR_NAMESPACE_NAME]
-```
-> * insert your namespace name insted `[YOUR_NAMESPACE_NAME]`  
-   
-   
+```   
         
 ## 8: Setting your dedicated namespaces contexts.
 ```shell
 kubectl config set-context $(kubectl config current-context) --namespace=[YOUR_NAMESPACE_NAME]
-```
-> * insert your namespace name insted `[YOUR_NAMESPACE_NAME]`  
-   
-   
-    
+```   
+
 ## 9: Getting your pods detail information.
 ```shell
 kubectl describe pod [YOUR_POD_NAME]
 ```  
-   
-   
-      
+
 ## 10: Deploy sample service into your namespaces.
 ```shell
+kubectl expose deployment nginx --port=80 --target-port=80 --type=NodePort --name=nginx-service
+
+or
+
 kubectl apply -f ./02_service-nodeport-nginx.yaml
-```  
-   
-   
-    
+```
+
 ## 11: Getting a little detail your nodes, services.
 ```shell
 kubectl get nodes,svc -o wide
-```  
-  
-  
-     
+```
+
 ## 12: Access your nginx via NodePort
 ```
 Access your Web-browser or curl command with master or worker nodes [IPAddress] + [NodePort]
@@ -104,6 +97,10 @@ kubectl logs [YOUR_POD_NAME]
 
 ## 14: Scaling-out your sample app.
 ```shell
+kubectl scale deployment nginx --replicas=4
+
+or
+
 kubectl apply -f ./03_scaleup-nginx.yaml
 ```  
     
@@ -128,6 +125,11 @@ kubectl get pods
 
 ## 4: Delete the deployment and service
 ```shell
+kubectl delete service nginx-service
+kubectl delete deployment nginx
+
+or
+
 kubectl delete -f 02_service-nodeport-nginx.yaml
 kubectl delete -f 03_scaleup-nginx.yaml
 ```

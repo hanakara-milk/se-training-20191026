@@ -18,3 +18,5 @@ cd se-training-20191126-28
 ```
 
 Have a fun with Kubernetes!
+
+--> 00_command.mdへ

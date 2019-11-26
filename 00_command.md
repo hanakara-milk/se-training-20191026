@@ -1,13 +1,5 @@
 # SE Team training 001 kubectl基礎編
----
-## 0: Getting SE Team training cluster kubeconfig
-```shell
-Connect Karbon UI and download kubeconfig from "kubernetes-training" cluster.
-```  
-Karbon Console URL infomation will be provided by the instructor.
-  
-  
-  
+---  
 ## 1: Confirm kubectl version
 ```kubernetes-kubectl
 kubectl version

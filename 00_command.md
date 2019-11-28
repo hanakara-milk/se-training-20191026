@@ -23,7 +23,7 @@ kubectl get pods --all-namespaces
     
 ## 4: Getting kubernetes namespaces.
 ```shell
-kubect get ns
+kubectl get ns
 ```
    
    

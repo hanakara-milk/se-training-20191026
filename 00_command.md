@@ -1,8 +1,8 @@
 # Basics training 001 kubectl基礎編
 ---  
 ## 01: Confirm kubectl version
-### Quiz.1: What information do you see?
-### Quiz.2: Can you see both client and server?
+Quiz.1: What information do you see?
+Quiz.2: Can you see both client and server?
 ```kubernetes-kubectl
 kubectl version
 ```  
@@ -10,8 +10,8 @@ kubectl version
   
    
 ## 02: Getting kubernetes nodes information.
-### Quiz.1: How many nodes are there?
-### Quiz.2: What types of nodes are there?
+Quiz.1: How many nodes are there?
+Quiz.2: What types of nodes are there?
 ```shell
 kubectl get nodes
 ```  
@@ -19,8 +19,8 @@ kubectl get nodes
    
    
 ## 03: Getting kubernetes pods information include system pods.
-### Quiz.1: How many pods do you see?
-### Quiz.2: Have you already placed a pod (container)?
+Quiz.1: How many pods do you see?
+Quiz.2: Have you already placed a pod (container)?
 ```shell
 kubectl get pods
 ``` 
@@ -28,8 +28,8 @@ kubectl get pods
    
    
 ## 04: Getting kubernetes pods information include system pods.
-### Quiz.1: How many pods do you see?
-### Quiz.2: Have you already placed a pod (container)?
+Quiz.1: How many pods do you see?
+Quiz.2: Have you already placed a pod (container)?
 ```shell
 kubectl get pods --all-namespaces
 ```  
@@ -37,7 +37,7 @@ kubectl get pods --all-namespaces
    
     
 ## 05: Getting kubernetes namespaces.
-### Quiz.1: What information do you see?
+Quiz.1: What information do you see?
 ```shell
 kubectl get ns
 ```
@@ -54,7 +54,7 @@ kubectl create ns [YOUR_NAMESPACE_NAME]
    
     
 ## 07: Deploy sample pods into your namespaces.
-### Quiz.1: Did the creation succeed?
+Quiz.1: Did the creation succeed?
 ```shell
 kubectl apply -f 01_deployment-nginx.yaml -n [YOUR_NAMESPACE_NAME]
 ```
@@ -62,7 +62,7 @@ kubectl apply -f 01_deployment-nginx.yaml -n [YOUR_NAMESPACE_NAME]
    
    
 ## 08: Getting your pods information
-### Quiz.1: How many pods do you see?
+Quiz.1: How many pods do you see?
 ```shell
 kubectl get pods
 ```   
@@ -70,7 +70,7 @@ kubectl get pods
         
         
 ## 09: Getting your pods information with namespaces
-### Quiz.1: How many pods do you see?
+Quiz.1: How many pods do you see?
 ```shell
 kubectl get pods -n [YOUR_NAMESPACE_NAME]
 ```   
@@ -78,7 +78,7 @@ kubectl get pods -n [YOUR_NAMESPACE_NAME]
     
     
 ## 10: Setting your dedicated namespaces contexts as default.
-### Quiz.1: Did the command succeed?
+Quiz.1: Did the command succeed?
 ```shell
 kubectl config set-context $(kubectl config current-context) --namespace=[YOUR_NAMESPACE_NAME]
 ```   
@@ -86,8 +86,8 @@ kubectl config set-context $(kubectl config current-context) --namespace=[YOUR_N
         
    
 ## 11: Getting your pods information with namespaces
-### Quiz.1: How many pods do you see?
-### Quiz.2: Can you view your deployed pods without namespace options?
+Quiz.1: How many pods do you see?
+Quiz.2: Can you view your deployed pods without namespace options?
 ```shell
 kubectl get pods
 ```   

@@ -2,7 +2,9 @@
 ---  
 ## 01: Confirm kubectl version
 Quiz.1: What information do you see?
+
 Quiz.2: Can you see both client and server?
+
 ```kubernetes-kubectl
 kubectl version
 ```  

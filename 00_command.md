@@ -1,92 +1,180 @@
-# SE Team training 001 kubectl基礎編
+# Basics training 001 kubectl基礎編
 ---  
-## 1: Confirm kubectl version
+## 01: Confirm kubectl version
+### Quiz.1: What information do you see?
+### Quiz.2: Can you see both client and server?
 ```kubernetes-kubectl
 kubectl version
 ```  
   
   
    
-## 2: Getting kubernetes nodes information.
+## 02: Getting kubernetes nodes information.
+### Quiz.1: How many nodes are there?
+### Quiz.2: What types of nodes are there?
 ```shell
 kubectl get nodes
 ```  
    
    
    
-## 3: Getting kubernetes pods information include system pods.
+## 03: Getting kubernetes pods information include system pods.
+### Quiz.1: How many pods do you see?
+### Quiz.2: Have you already placed a pod (container)?
+```shell
+kubectl get pods
+``` 
+   
+   
+   
+## 04: Getting kubernetes pods information include system pods.
+### Quiz.1: How many pods do you see?
+### Quiz.2: Have you already placed a pod (container)?
 ```shell
 kubectl get pods --all-namespaces
 ```  
    
    
     
-## 4: Getting kubernetes namespaces.
+## 05: Getting kubernetes namespaces.
+### Quiz.1: What information do you see?
 ```shell
 kubectl get ns
 ```
    
    
     
-## 5: Creating your work namespaces.
+## 06: Creating your work namespaces.
+### Quiz.1: Did the creation succeed?
 ```shell
 kubectl create ns [YOUR_NAMESPACE_NAME]
 ```
-> * insert uniq your namespace name insted `[YOUR_NAMESPACE_NAME]`  
+> * insert unique your namespace name insted `[YOUR_NAMESPACE_NAME]`  
    
    
     
-## 6: Deploy sample pods into your namespaces.
+## 07: Deploy sample pods into your namespaces.
+### Quiz.1: Did the creation succeed?
 ```shell
-kubectl run nginx --image=nginx:1.11 --port=80 -n [YOUR_NAMESPACE_NAME]
-
-or
-
 kubectl apply -f 01_deployment-nginx.yaml -n [YOUR_NAMESPACE_NAME]
 ```
    
-## 7: Getting your pods information
+   
+   
+## 08: Getting your pods information
+### Quiz.1: How many pods do you see?
+```shell
+kubectl get pods
+```   
+        
+        
+        
+## 09: Getting your pods information with namespaces
+### Quiz.1: How many pods do you see?
 ```shell
 kubectl get pods -n [YOUR_NAMESPACE_NAME]
 ```   
-        
-## 8: Setting your dedicated namespaces contexts.
+     
+    
+    
+## 10: Setting your dedicated namespaces contexts as default.
+### Quiz.1: Did the command succeed?
 ```shell
 kubectl config set-context $(kubectl config current-context) --namespace=[YOUR_NAMESPACE_NAME]
 ```   
-
-## 9: Getting your pods detail information.
+   
+        
+   
+## 11: Getting your pods information with namespaces
+### Quiz.1: How many pods do you see?
+### Quiz.2: Can you view your deployed pods without namespace options?
+```shell
+kubectl get pods
+```   
+        
+    
+    
+## 12: Getting your pods detail information.
+### Quiz.1: What information do you see?
+### Quiz.2: What is the pod namespace name?
+### Quiz.3: On which node is the pod located?
+### Quiz.4: What is the image of Pod?
+### Quiz.5: What information does the event have?
 ```shell
 kubectl describe pod [YOUR_POD_NAME]
 ```  
-
-## 10: Deploy sample service into your namespaces.
+    
+    
+    
+## 13: Deploy sample service into your namespaces.
+### Quiz.1: Did the creation succeed?
 ```shell
-kubectl expose deployment nginx --port=80 --target-port=80 --type=NodePort --name=nginx-service
+kubectl apply -f ./02_service-nodeport-nginx.yaml
+```
+        
+    
+    
+## 14: Getting your pods detail information.
+### Quiz.1: What information do you see?
+### Quiz.2: What is the Service namespace name?
+### Quiz.3: What is the Service type?
+### Quiz.4: What is NodePort number?
+### Quiz.5: What is TargetPort number?
+```shell
+kubectl describe service [YOUR_CREATED_SERVICE_NAME]
+```  
+    
+    
+    
+## 15: Getting a little detail your nodes, services.
+### Quiz.1: What information do you see?
+```shell
+kubectl get nodes,svc -o wide
 
 or
 
-kubectl apply -f ./02_service-nodeport-nginx.yaml
+Node IP address information can also be confirmed from the Karbon UI.
+ -1． Access the Karbon UI.
+ -2． Select your cluster.
+ -3． Select Nodes on the left vane.
+ -4. Select Master or Worker.
 ```
 
-## 11: Getting a little detail your nodes, services.
-```shell
-kubectl get nodes,svc -o wide
-```
-
-## 12: Access your nginx via NodePort
+## 16: Access your nginx via NodePort
+### Quiz.1: Does the nginx default page been displayed successfully?
 ```
 Access your Web-browser or curl command with master or worker nodes [IPAddress] + [NodePort]
 ```
-> ( eg. `10.149.30.109:32114`)  
+> ( eg. `10.149.30.109:32114` ,This is sample URL. )
+> Note: Replace IP with the IP address of your Master node or Worker node confirmed in steps 14 and 15.
+> Note: Replace the port with the number of your NodePort confirmed in steps 14 and 15.
    
    
     
-## 13: Getting logs from your pods.
+## 17: Getting logs from your pods.
+### Quiz.1: What information do you see?
 ```shell
 kubectl logs [YOUR_POD_NAME]
 ```  
+   
+   
+    
+## 18: Getting logs from your pods with tail mode.
+### Quiz.1: Has the HTTP access log you accessed been displayed?
+```shell
+kubectl logs -f [YOUR_POD_NAME]
 
+Access your Web-browser or curl command with master or worker nodes [IPAddress] + [NodePort]
+after that
+Access your Web-browser or curl command with master or worker nodes [IPAddress] + [NodePort]/aaaa
+
+> ( eg. `10.149.30.109:32114` ,This is sample URL. )
+> ( eg. `10.149.30.109:32114/aaaa` ,This is sample URL. )
+
+```  
+   
+   
+    
 ## 14: Scaling-out your sample app.
 ```shell
 kubectl scale deployment nginx --replicas=4

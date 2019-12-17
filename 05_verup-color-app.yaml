@@ -11,6 +11,8 @@ spec:
     metadata:
       labels:
         run: webapp-color
+      annotations:
+        kubernetes.io/change-cause: webapp-color apps update to version.2
     spec:
       containers:
       - name: webapp-color
